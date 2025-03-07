@@ -1,0 +1,11 @@
+[project]
+name = "python_template_repo"
+version = "0.1.0"
+description = "A Python template repository."
+
+[project.dependencies]
+uv = "*"
+
+[build-system]
+requires = ["uv"]
+build-backend = "uv.build"
