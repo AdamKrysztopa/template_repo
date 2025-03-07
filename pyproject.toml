@@ -4,14 +4,14 @@ version = "0.1.0"
 description = "A Python template repository."
 readme = "README.md"
 requires-python = ">=3.11"
+dependencies = ["uvicorn>=0.22.0,<0.23.0"]
 
-[tool.uv.dependencies]
-uvicorn = "^0.22.0"
-
-[tool.uv.dev-dependencies]
-ruff = "^0.0.289"
-pyright = "^1.1.320"
-black = "^23.9.1"
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.0.289,<0.0.290",
+    "pyright>=1.1.320,<1.1.321",
+    "black>=23.9.1,<23.9.2",
+]
 
 [build-system]
 requires = ["uv"]
