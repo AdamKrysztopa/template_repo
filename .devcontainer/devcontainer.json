@@ -21,5 +21,8 @@
         "ms-pyright.pyright",
         "ms-python.black-formatter"
     ],
-    "postCreateCommand": "uv sync"
+    "postCreateCommand": "uv sync",
+    "containerEnv": {
+        "MY_ENV_VAR": "${localEnv:MY_ENV_VAR}"
+    }
 }
