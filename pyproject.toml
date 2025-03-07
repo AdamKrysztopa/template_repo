@@ -2,9 +2,16 @@
 name = "python_template_repo"
 version = "0.1.0"
 description = "A Python template repository."
+readme = "README.md"
+requires-python = ">=3.11"
 
-[project.dependencies]
-uv = "*"
+[tool.uv.dependencies]
+uvicorn = "^0.22.0"
+
+[tool.uv.dev-dependencies]
+ruff = "^0.0.289"
+pyright = "^1.1.320"
+black = "^23.9.1"
 
 [build-system]
 requires = ["uv"]
