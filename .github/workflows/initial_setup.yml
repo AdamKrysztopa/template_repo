@@ -1,0 +1,31 @@
+name: Initial Template Setup
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  run-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Verify renaming script exists
+        id: check_script
+        run: |
+          if [ ! -f run_me_first.sh ]; then
+            echo "No renaming needed"
+            exit 78
+          fi
+
+      - name: Run renaming script
+        run: bash ./run_me_first.sh
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Run template renaming" || echo "Nothing to commit"
+          git push origin main
